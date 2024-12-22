@@ -8,8 +8,7 @@ import AuthContext from '../AuthProvider/AuthContex';
 
 
 const LogIn = () => {
-    const { loginUser,setUser,handleGoogle }=useContext(AuthContext) 
-    console.log(setUser)                         
+    const { loginUser,setUser,handleGoogle }=useContext(AuthContext)                        
   const [error,setError]=useState({});
   const [showPassword,setShowPassword]=useState(false) 
   const location=useLocation();
@@ -42,6 +41,7 @@ const LogIn = () => {
       handleGoogle()
     .then((res) => {
       const user = res.user;
+      console.log(user)
       setUser(user);
       toast.success(`Welcome, ${user.displayName}!`);
       setTimeout(() => {

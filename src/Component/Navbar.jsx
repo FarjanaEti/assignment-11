@@ -40,7 +40,7 @@ const Navbar = () => {
             <li><Link to="/allmovie">All Movies</Link></li>
             {user && (
               <>
-                <li><Link to="/addmovie">Add Movie</Link></li>
+                <li><Link to="/addFood">Add Movie</Link></li>
                 <li><Link to="/myfavorite">My Favorites</Link></li>
               </>
             )}
@@ -69,7 +69,7 @@ const Navbar = () => {
           <li><Link to="/allmovie">All Movies</Link></li>
           {user && (
             <>
-              <li><Link to="/addmovie">Add Movie</Link></li>
+              <li><Link to="/addFood">Add Food</Link></li>
               <li><Link to="/myfavorite">My Favorites</Link></li>
             </>
           )}
