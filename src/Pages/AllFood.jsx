@@ -4,9 +4,6 @@ import { Link, useLoaderData } from 'react-router-dom';
 const AllFood = () => {
    const data= useLoaderData();
    console.log(data)
-   const handleViewDetails=e=>{
-
-   }
      return (
     <div className="p-6 mt-5 bg-gray-100">
       <h2 className="text-2xl font-bold text-center mb-6">Featured Foods</h2>

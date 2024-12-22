@@ -6,7 +6,30 @@ const FoodDetails = () => {
    console.log(food);   
    const handleRequestFood=()=>{
       document.getElementById("requestModal").showModal();                        
-   }                        
+   }    
+   const handleAddFoodRequest = (food) => {
+  const requestedData = {
+    ...food,
+    status: "requested",
+    requestDate: new Date(),
+    additionalNotes: document.querySelector(".textarea").value,
+  };
+
+  fetch(`http://localhost:5000/food-request`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(requestedData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Food requested successfully!");
+        // Redirect to My Requests page or update the UI
+      } else {
+        alert("Error requesting food");
+      }
+    })
+    .catch((error) => console.error(error));
+};                    
  return (
     <div className="p-6 bg-gray-100 text-center">
       <h2 className="text-2xl font-bold mb-6">{food.name}</h2>
@@ -113,7 +136,7 @@ const FoodDetails = () => {
           <div className="modal-action">
             <button
               className="btn btn-primary"
-              //onClick={() => handleFoodRequest(food)}
+              onClick={() => handleAddFoodRequest(food)}
             >
               Request Food
             </button>

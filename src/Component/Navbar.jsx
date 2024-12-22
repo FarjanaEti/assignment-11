@@ -41,10 +41,10 @@ const Navbar = () => {
             {user && (
               <>
                 <li><Link to="/addFood">Add Movie</Link></li>
-                <li><Link to="/myfavorite">My Favorites</Link></li>
+                <li><Link to="/myRequest">My Food Request</Link></li>
               </>
             )}
-            <li><Link to="/contact">Contact Us</Link></li>
+            
             {!user ? (
               <>
                 <li><Link to="/login">Login</Link></li>
@@ -70,10 +70,9 @@ const Navbar = () => {
           {user && (
             <>
               <li><Link to="/addFood">Add Food</Link></li>
-              <li><Link to="/myfavorite">My Favorites</Link></li>
+              <li><Link to="/myRequest">My Food Request</Link></li>
             </>
           )}
-          <li><Link to="/contact">Contact Us</Link></li>
         </ul>
       </div>
 

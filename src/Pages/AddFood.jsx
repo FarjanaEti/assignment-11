@@ -46,7 +46,7 @@ const AddFood = () => {
         name: user?.displayName,
         email: user?.email,
       },
-      status: 'available', // Default status
+      status: 'available',
     };
   console.log(newFood)
     setLoading(true);
