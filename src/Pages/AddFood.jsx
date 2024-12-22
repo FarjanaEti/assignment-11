@@ -147,7 +147,7 @@ const AddFood = () => {
 
         {/* Donator Info */}
         <div className="mb-4">
-          <img src={user?.photoURL} alt={user?.displayName} className="w-12 h-12 rounded-full" />
+          <img src={user?.photoURL || 'https://i.ibb.co.com/1TxrJFN/462561728-536882932418932-6619261142512956761-n.jpg'} alt={user?.displayName} className="w-12 h-12 rounded-full" />
           <p>{user?.displayName}</p>
           <p>{user?.email}</p>
         </div>

@@ -7,6 +7,8 @@ import Home from '../Component/Home';
 import LogIn from '../Pages/LogIn';
 import Register from '../Pages/Register';
 import AddFood from '../Pages/AddFood';
+import AllFood from '../Pages/AllFood';
+import FoodDetails from '../Pages/FoodDetails';
 
 const router = createBrowserRouter([
    {
@@ -16,11 +18,22 @@ const router = createBrowserRouter([
   children:[
      {
      path:'/',
-     element:<Home></Home>              
+     element:<Home></Home> ,
    },
    {
     path:'/addFood',
     element:<AddFood></AddFood>,
+   },
+   {
+      path:'/allFood',
+      element:<AllFood></AllFood>,
+      loader:()=>fetch('http://localhost:5000/food')
+   },
+   {
+      path:'/food/:id',
+      element:<FoodDetails></FoodDetails>,
+      loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
+      
    },
    {
   path:'/login',
