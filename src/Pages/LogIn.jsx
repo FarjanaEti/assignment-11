@@ -5,6 +5,8 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from '../AuthProvider/AuthContex';
+import lotiieLogin from '../assets/Animation - 1733900171268.json'
+import Lottie from 'lottie-react';
 
 
 const LogIn = () => {
@@ -53,7 +55,10 @@ const LogIn = () => {
     });  
      }                        
    return (
-   <div className='flex items-center justify-center min-h-screen'>
+   <div className='flex gap-3 items-center justify-center min-h-screen'>
+    <div className="text-center lg:text-left w-96">
+    <Lottie animationData={lotiieLogin}></Lottie>
+    </div>
      <div className="card items-center bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form onSubmit={handleSubmit} className="card-body">
          <p className='font-semibold text-2xl my-3'>LogIn Here</p>

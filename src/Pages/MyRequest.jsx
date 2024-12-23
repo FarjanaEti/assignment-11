@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const MyRequest = () => {
-     const[request,setRequest]=useState([])   
+     const[request,setRequest]=useState([]) 
+     console.log(request)  
         useEffect(()=>{
     fetch(`http://localhost:5000/food-request`)
     .then(res => res.json())
@@ -20,13 +21,35 @@ const MyRequest = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Donar Name</th>
+                            <th>Pickup Location</th>
+                            <th>Expire Date</th>
+                            <th>Request date</th>
                         </tr>
                     </thead>
-                    
+                    <tbody>
+                        {/* row 1 */}
+                        {
+                            request.map(food => <tr key={food._id}>
+                                <th>
+                                    <label>
+                                        <input type="checkbox" className="checkbox" />
+                                    </label>
+                                </th>
+                                <td>
+                                    {food.donator.email}
+                                </td>
+                                <td>
+                                   {food.location}
+                                </td>
+                                <td>{food.expiredDateTime}</td>
+                                <th>
+                                    {food.requestDate}
+                                    {/* <button className="btn btn-ghost btn-xs">X</button> */}
+                                </th>
+                            </tr>)
+                        }
+                    </tbody>
                 </table>
             </div>
         </div>

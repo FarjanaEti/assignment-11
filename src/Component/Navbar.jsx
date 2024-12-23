@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../AuthProvider/AuthContex';
+import { GiFoodTruck } from 'react-icons/gi';
+import { motion } from "motion/react"
+import { easeOut } from 'motion';
 
 const Navbar = () => {
      const { user, logout } = useContext(AuthContext);   
@@ -58,7 +61,16 @@ const Navbar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">
-         Food
+          <motion.h1 animate={{ x: 20 }}
+        transition={{ duration: 2, delay: 1, ease: easeOut, repeat: Infinity }}>
+         <GiFoodTruck className='text-blue-700 text-7xl'></GiFoodTruck>
+          </motion.h1>
+         <div>
+          <p>-----The-----</p>
+          <motion.h1 animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }}
+           transition={{ duration: 1.5, repeat: Infinity }}>Food Sharing </motion.h1>
+          <p>---- Project ----</p>
+         </div>
         </a>
       </div>
 

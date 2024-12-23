@@ -5,6 +5,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 import AuthContext from '../AuthProvider/AuthContex';
+import lottiAnimaton from '../assets/Animation - 1733851369003.json'
+import Lottie from 'lottie-react';
 
 const Register = () => {
     const {createUser,setUser,handleGoogle}=useContext(AuthContext)                          
@@ -65,6 +67,9 @@ const Register = () => {
                             
  return (
   <div className='flex items-center justify-center min-h-screen'>
+     <div className="text-center lg:text-left w-96">
+    <Lottie animationData={lottiAnimaton}></Lottie>
+    </div>
      <div className="card items-center bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form onSubmit={handleSubmit} className="card-body">
          <p className='font-semibold text-2xl my-3'>Register Here</p>
