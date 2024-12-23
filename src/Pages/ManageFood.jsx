@@ -1,61 +1,56 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../Hooks/useAuth';
-import { p } from 'motion/react-client';
 
 const ManageFood = () => {
     const [foods, setFoods] = useState([]);
     const { user } = useAuth();
     const [selectedFood, setSelectedFood] = useState(null);
     const [showUpdateModal, setShowUpdateModal] = useState(false);
-    const [error, setError] = useState('');
 
     useEffect(() => {
-         if (!user?.email) {
-     setError('User email is missing. Please log in.');
-            return; 
-        }                     
         fetch(`http://localhost:5000/food?email=${user.email}`)
             .then(res => res.json())
             .then(data => setFoods(data));
     }, [user.email]);
 
-//     const handleDelete = (id) => {
-//         if (window.confirm('Are you sure you want to delete this food?')) {
-//             fetch(`http://localhost:5000/food/${id}`, {
-//                 method: 'DELETE',
-//             })
-//                 .then(res => res.json())
-//                 .then(data => {
-//                     if (data.deletedCount > 0) {
-//                         setFoods(foods.filter(food => food._id !== id));
-//                         alert('Food deleted successfully!');
-//                     }
-//                 });
-//         }
-//     };
-
-//     const handleUpdate = (updatedFood) => {
-//         fetch(`http://localhost:5000/food/${updatedFood._id}`, {
-//             method: 'PUT',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify(updatedFood),
-//         })
-//             .then(res => res.json())
-//             .then(data => {
-//                 if (data.modifiedCount > 0) {
-//                     setFoods(foods.map(food => (food._id === updatedFood._id ? updatedFood : food)));
-//                     alert('Food updated successfully!');
-//                 }
-//             });
-//     };
+     const handleDelete = (id) => {
+         if (window.confirm('Are you sure you want to delete this food?')) {
+            fetch(`http://localhost:5000/food/${id}`, {
+               method: 'DELETE',
+            })
+                 .then(res => res.json())
+                 .then(data => {
+                     if (data.deletedCount > 0) {
+                         setFoods(foods.filter(food => food._id !== id));
+                         alert('Food deleted successfully!');
+                     }
+                 });
+         }
+     }
+     const handleUpdate = (updatedFood) => {
+          console.log(updatedFood)                    
+         fetch(`http://localhost:5000/food/${updatedFood._id}`, {
+             method: 'PATCH',
+             headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+            name: updatedFood.name,
+            quantity: updatedFood.quantity,
+            location: updatedFood.location,
+        }),
+         })
+             .then(res => res.json())
+             .then(data => {
+                 if (data.modifiedCount > 0) {
+            setFoods(foods.map(food => (food._id ===  updatedFood._id ? updatedFood : food)));
+                     alert('Food updated successfully!');
+                }
+             });
+     };
 
     const openUpdateModal = (food) => {
         setSelectedFood(food);
         setShowUpdateModal(true);
     };
-     if (error) {
-        return <div className="text-red-500 font-bold">{error}</div>;
-    }
 
     return (
         <div className="p-4">
@@ -66,7 +61,7 @@ const ManageFood = () => {
                         <th className="border border-gray-300 px-4 py-2">Image</th>
                         <th className="border border-gray-300 px-4 py-2">Name</th>
                         <th className="border border-gray-300 px-4 py-2">Quantity</th>
-                        <th className="border border-gray-300 px-4 py-2">Pic Up Location</th>
+                        <th className="border border-gray-300 px-4 py-2">Pic UpLocation</th>
                         <th className="border border-gray-300 px-4 py-2">Expiry Date</th>
                         <th className="border border-gray-300 px-4 py-2">Status</th>
                         <th className="border border-gray-300 px-4 py-2">Actions</th>
