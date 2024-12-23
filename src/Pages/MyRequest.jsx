@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../Hooks/useAuth';
 
 const MyRequest = () => {
+    const{user}=useAuth();
      const[request,setRequest]=useState([]) 
      console.log(request)  
         useEffect(()=>{
-    fetch(`http://localhost:5000/food-request`)
+    fetch(`http://localhost:5000/food-request?email=${user.email}`)
     .then(res => res.json())
    .then(data => setRequest(data))                    
-        },[])                      
+        },[user.email])                      
   return (
      <div className='py-10'>
             <h2 className="text-3xl">My Food Request:{request.length} </h2>
