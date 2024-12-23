@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-
+import { easeOut, motion } from "framer-motion";
+import lottiAnimaton from '../assets/Animation - 1734981666471.json'
+import Lottie from 'lottie-react';
 const Banner = () => {
    const images = [
-    "https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp",
-    "https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp",
-    "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp",
-    "https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp",
-    "https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp",
-    "https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp",
-    "https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp",
+    "https://i.ibb.co.com/VxVbBz6/bn-3.jpg",
+    "https://i.ibb.co.com/c6P36Rx/bn-4.jpg",
+    "https://i.ibb.co.com/TWzCxfV/bn-5.jpg",
+    "https://i.ibb.co.com/ys2h2JW/bn-2.jpg",
+    "https://i.ibb.co.com/rmf4f6H/bn-1.webp",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,11 +19,12 @@ const Banner = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval); 
   }, [images.length]);
 
   return (
-    <div className="relative h-96 overflow-hidden rounded-box ">
+    <>
+    <div className="relative h-[500px] overflow-hidden rounded-box ">
       <div
         className="absolute inset-0 flex flex-col transition-transform duration-1000"
         style={{
@@ -33,55 +34,36 @@ const Banner = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="flex-shrink-0 h-96 w-full"
+            className="flex-shrink-0 h-[500px] w-full"
           >
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="object-cover h-full "
+              className="object-cover h-full w-full"
             />
           </div>
         ))}
       </div>
 
-
-      <div className="card bg-base-100 w-96 shadow-xl overflow-hidden group">
-  {/* Image Container */}
-  <figure className="relative w-full h-64 overflow-hidden">
-    <div className="absolute top-0 left-0 w-full h-[500px] transition-transform duration-1000 group-hover:translate-y-[-1000px]">
-      <img
-        className="w-full h-64 object-cover"
-        src="https://i.ibb.co/MDzvPPf/download8.jpg"
-        alt="Image 1"
-      />
-      <img
-        className="w-full h-64 object-cover"
-        src="https://i.ibb.co/Pj988Gq/images.jpg"
-        alt="Image 2"
-      />
-      <img
-        className="w-full h-64 object-cover"
-        src="https://i.ibb.co/1TxrJFN/462561728-536882932418932-6619261142512956761-n.jpg"
-        alt="Image 3"
-      />
-      <img
-        className="w-full h-64 object-cover"
-        src="https://i.ibb.co/Pj988Gq/images.jpg"
-        alt="Image 4"
-      />
-    </div>
-  </figure>
-  {/* Card Body */}
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">Demo</h2>
-    
+    <motion.div
+      initial={{ x: "100%" }} 
+      animate={{ x: "-100%" }}  
+    transition={{ duration: 20, delay: 1, ease: easeOut, repeat: Infinity }}
+    className="text-3xl text-white font-bold "
+    >Sharing Excess is connecting those who have extra food with those who need more
+      </motion.div> 
   </div>
-</div>
-
-
-
-
+  <div className="relative  p-3 w-1/3 mx-auto -top-24 rounded-lg bg-white bg-opacity-50">
+  
+  <div className=" rounded-md bg-emerald-100 p-5 ">
+  <Lottie className="absolute -left-14 -top-10 w-24 h-24" animationData={lottiAnimaton}></Lottie>
+   <p> <span className="text-xl font-semibold">What are the main goals of our project?</span>
+ Food Sharing project was seeking to understand contemporary food sharing and particularly sharing beyond familial settings, so beyond the family. We were particularly interested in its impact on society, the economy and the environment. </p>
+ <Lottie className="absolute -right-14 -bottom-5 w-24 h-24" animationData={lottiAnimaton}></Lottie>
+      </div>
   </div>
+  
+  </>
   );
 };
 

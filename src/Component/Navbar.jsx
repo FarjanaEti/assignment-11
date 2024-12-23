@@ -15,7 +15,7 @@ const Navbar = () => {
       .catch((error) => console.error("Logout Error:", error));
   };                        
    return (
-     <div className="navbar bg-base-100 mb-10">
+     <div className="navbar bg-base-100 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -61,7 +61,7 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
+        <a className="btn btn-ghost text-xl mb-6">
           <motion.h1 animate={{ x: 20 }}
         transition={{ duration: 2, delay: 1, ease: easeOut, repeat: Infinity }}>
          <GiFoodTruck className='text-blue-700 text-7xl'></GiFoodTruck>
@@ -76,7 +76,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar Center (Visible only on large screens) */}
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center  hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/allFood">All Food</Link></li>

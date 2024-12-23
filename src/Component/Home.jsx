@@ -3,7 +3,7 @@ import Banner from './Banner';
 import FeaturedFood from '../Pages/FeaturedFood';
 const Home = () => {
   return (
-     <div className='mt-10'>
+     <div>
         <Banner></Banner>  
         <FeaturedFood></FeaturedFood>                                                                   
   </div>
