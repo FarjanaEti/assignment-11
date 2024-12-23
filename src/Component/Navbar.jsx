@@ -15,7 +15,7 @@ const Navbar = () => {
       .catch((error) => console.error("Logout Error:", error));
   };                        
    return (
-     <div className="navbar bg-base-100">
+     <div className="navbar bg-base-100 mb-10">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -45,6 +45,7 @@ const Navbar = () => {
               <>
                 <li><Link to="/addFood">Add Movie</Link></li>
                 <li><Link to="/myRequest">My Food Request</Link></li>
+                <li><Link to="/manageFood">Manage Food</Link></li>
               </>
             )}
             
@@ -83,6 +84,7 @@ const Navbar = () => {
             <>
               <li><Link to="/addFood">Add Food</Link></li>
               <li><Link to="/myRequest">My Food Request</Link></li>
+              <li><Link to="/manageFood">Manage Food</Link></li>
             </>
           )}
         </ul>

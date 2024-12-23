@@ -10,11 +10,13 @@ import AddFood from '../Pages/AddFood';
 import AllFood from '../Pages/AllFood';
 import FoodDetails from '../Pages/FoodDetails';
 import MyRequest from '../Pages/MyRequest';
+import ManageFood from '../Pages/ManageFood';
 
 const router = createBrowserRouter([
    {
   path: "/",
   element:<Layout></Layout>,
+  
   errorElement: <h2>Error page</h2>,
   children:[
      {
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
    {
       path:'/myRequest',
       element:<MyRequest></MyRequest>
+   },
+   {
+      path:'/manageFood',
+      element:<ManageFood></ManageFood>
    },
    {
   path:'/login',

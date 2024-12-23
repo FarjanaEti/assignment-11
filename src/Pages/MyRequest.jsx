@@ -9,7 +9,7 @@ const MyRequest = () => {
    .then(data => setRequest(data))                    
         },[])                      
   return (
-     <div>
+     <div className='py-10'>
             <h2 className="text-3xl">My Food Request:{request.length} </h2>
           <div className="overflow-x-auto">
                 <table className="table">
