@@ -15,7 +15,7 @@ const Navbar = () => {
       .catch((error) => console.error("Logout Error:", error));
   };                        
    return (
-     <div className="navbar bg-base-100 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
+     <div className="navbar bg-base-200 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
