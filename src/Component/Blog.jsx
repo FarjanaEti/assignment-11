@@ -11,14 +11,14 @@ const Blog = () => {
   ];
 
   return (
-    <div className="p-5 bg-pink-100 my-5">
-      <section className="text-center">
-        <h1 className="text-4xl font-semibold text-gray-800 mb-6">Supported By</h1>
-        <p className="text-lg text-gray-600 ">
+    <div className="p-5  bg-[#A0522D] rounded-xl shadow-2xl my-5">
+      <section className="text-center  ">
+        <h1 className="text-4xl font-semibold  mb-6 ">Supported By</h1>
+        <p className="text-lg  ">
           We are grateful for the support and collaboration of organizations and individuals who help make this food-sharing platform a reality.
         </p>
 
-        <h2 className="text-3xl font-semibold text-gray-800 mb-3">Our Partners and Sponsors</h2>
+        <h2 className="text-3xl font-semibold  mb-3">Our Partners and Sponsors</h2>
 
         <div className="flex justify-center items-center mb-10 space-x-8  overflow-hidden">
           {logos.map((logo, index) => (
@@ -38,12 +38,12 @@ const Blog = () => {
             </motion.div>
           ))}
         </div>
-        <h2 className="text-3xl font-semibold text-gray-800 ">Become a Supporter</h2>
-          <p className="text-lg text-gray-600 mb-6">
+        <h2 className="text-3xl font-semibold  ">Become a Supporter</h2>
+          <p className="text-lg  mb-6">
             We welcome new partners, sponsors, and volunteers to join us in making a greater impact. If you’re interested in supporting our food-sharing initiative, please contact us.
           </p>
 
-          <ul className="text-lg text-gray-600">
+          <ul className="text-lg ">
             <li>Email: <a href="mailto:support@foodsharingplatform.com" className="text-blue-500 hover:underline">support@foodsharingplatform.com</a></li>
             <li>Phone: +1 123-456-7890</li>
             <li>Address: 123 Dhanmondi-15, Dhaka, Bangladesh</li>

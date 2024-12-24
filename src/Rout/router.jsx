@@ -11,6 +11,7 @@ import AllFood from '../Pages/AllFood';
 import FoodDetails from '../Pages/FoodDetails';
 import MyRequest from '../Pages/MyRequest';
 import ManageFood from '../Pages/ManageFood';
+import PrivateRout from './PrivateRout';
 
 const router = createBrowserRouter([
    {
@@ -34,16 +35,16 @@ const router = createBrowserRouter([
    },
    {
       path:'/food/:id',
-      element:<FoodDetails></FoodDetails>,
+      element:<PrivateRout><FoodDetails></FoodDetails></PrivateRout> ,
       loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
    },
    {
       path:'/myRequest',
-      element:<MyRequest></MyRequest>
+      element:<PrivateRout><MyRequest></MyRequest></PrivateRout>
    },
    {
       path:'/manageFood',
-      element:<ManageFood></ManageFood>
+      element:<PrivateRout><ManageFood></ManageFood></PrivateRout>
    },
    {
   path:'/login',
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
   {
    path:'/register',
    element:<Register></Register>
+   
   }
 ]
    }

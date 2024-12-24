@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../Hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const ManageFood = () => {
     const [foods, setFoods] = useState([]);
@@ -22,7 +23,12 @@ const ManageFood = () => {
                  .then(data => {
                      if (data.deletedCount > 0) {
                          setFoods(foods.filter(food => food._id !== id));
-                         alert('Food deleted successfully!');
+                         Swal.fire({
+                                      title: 'Success!',
+                                      text: 'Deleted successfully',
+                                      icon: 'success',
+                                      confirmButtonText: 'Ok',
+                                    });
                      }
                  });
          }
@@ -42,7 +48,12 @@ const ManageFood = () => {
              .then(data => {
                  if (data.modifiedCount > 0) {
             setFoods(foods.map(food => (food._id ===  updatedFood._id ? updatedFood : food)));
-                     alert('Food updated successfully!');
+                     Swal.fire({
+                                  title: 'Success!',
+                                  text: 'Updated successfully',
+                                  icon: 'success',
+                                  confirmButtonText: 'Ok',
+                                });
                 }
              });
      };

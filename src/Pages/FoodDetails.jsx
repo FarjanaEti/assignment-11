@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const FoodDetails = () => {
    const food=useLoaderData();
@@ -22,8 +23,12 @@ const FoodDetails = () => {
   })
     .then((response) => {
       if (response.ok) {
-        alert("Food requested successfully!");
-        // Redirect to My Requests page or update the UI
+        Swal.fire({
+                     title: 'Success!',
+                     text: 'Request added successfully',
+                     icon: 'success',
+                     confirmButtonText: 'Ok',
+                   });
       } else {
         alert("Error requesting food");
       }

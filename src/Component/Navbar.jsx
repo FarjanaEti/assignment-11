@@ -6,14 +6,9 @@ import { motion } from "motion/react"
 import { easeOut } from 'motion';
 
 const Navbar = () => {
-     const { user, logout } = useContext(AuthContext);   
-     const handleLogout = () => {
-    logout()
-      .then(() => {
-        console.log("Logged out successfully");
-      })
-      .catch((error) => console.error("Logout Error:", error));
-  };                        
+     const { user, signOutUser } = useContext(AuthContext);  
+
+          
    return (
      <div className="navbar bg-base-200 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
@@ -56,21 +51,22 @@ const Navbar = () => {
               </>
             ) : (
               <li>
-                <button onClick={handleLogout} className="btn btn-error w-full">Logout</button>
+                
               </li>
             )}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl mb-6">
+        <a className="btn hidden  lg:block btn-ghost text-xl  mb-6">
+        <div className='flex space-x-5'>
           <motion.h1 animate={{ x: 20 }}
         transition={{ duration: 2, delay: 1, ease: easeOut, repeat: Infinity }}>
          <GiFoodTruck className='text-blue-700 text-7xl'></GiFoodTruck>
           </motion.h1>
-         <div>
-          <p>-----The-----</p>
+        
+         <div > <p>-----The-----</p>
           <motion.h1 animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }}
            transition={{ duration: 1.5, repeat: Infinity }}>Food Sharing </motion.h1>
-          <p>---- Project ----</p>
+          <p>---- Project ----</p></div>
          </div>
         </a>
       </div>
@@ -106,7 +102,7 @@ const Navbar = () => {
               alt="User"
               className="w-12 h-10 rounded-full border "
             />      
-                <button onClick={handleLogout} className="btn  btn-error ">Logout</button>
+                <button onClick={signOutUser} className="btn  btn-error ">Logout</button>
             
           </div>
         )}

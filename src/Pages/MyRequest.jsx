@@ -23,7 +23,7 @@ const MyRequest = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='text-2xl font-semibold'>
                             <th>
                                 <label>
                                     <input type="checkbox" className="checkbox" />

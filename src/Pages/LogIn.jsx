@@ -16,6 +16,7 @@ const LogIn = () => {
   const location=useLocation();
   const navigate=useNavigate();
   const emailRef=useRef();  
+    const from = location.state || '/';
   
   //user login
      const handleSubmit=(e)=>{
@@ -29,9 +30,8 @@ const LogIn = () => {
         const user = result.user;
         console.log(user)
         setUser(user);
-        toast.success('Login successful')
-        const from = location.state?.from?.pathname || '/'; 
-        navigate('/');
+        toast.success('Login successful') 
+        navigate(from);
       })
       .catch((err) => {
        setError({ ...error, login: err.code });
