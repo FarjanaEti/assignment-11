@@ -84,7 +84,7 @@ const FoodDetails = () => {
               <label>Donator Name:</label>
               <input
                 type="text"
-                value={food.donatorName}
+                value={food.donator.name}
                 className="input input-bordered w-full"
                 readOnly
               />
@@ -93,7 +93,7 @@ const FoodDetails = () => {
               <label>User Email:</label>
               <input
                 type="email"
-                value="user@example.com" 
+                value={food.donator.email}
                 className="input input-bordered w-full"
                 readOnly
               />

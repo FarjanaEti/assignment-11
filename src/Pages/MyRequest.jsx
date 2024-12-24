@@ -24,6 +24,7 @@ const MyRequest = () => {
                                 </label>
                             </th>
                             <th>Donar Name</th>
+                            <th>Food Name</th>
                             <th>Pickup Location</th>
                             <th>Expire Date</th>
                             <th>Request date</th>
@@ -40,6 +41,9 @@ const MyRequest = () => {
                                 </th>
                                 <td>
                                     {food.donator.email}
+                                </td>
+                                <td>
+                                    {food.name}
                                 </td>
                                 <td>
                                    {food.location}

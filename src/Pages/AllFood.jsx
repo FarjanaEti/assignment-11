@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const AllFood = () => {
   const [ThreeColumn, setThreeColumn] = useState(true);
-  console.log(ThreeColumn)
+  
    const data= useLoaderData();
    console.log(data)
      return (
