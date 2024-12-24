@@ -9,7 +9,10 @@ const FeaturedFood = () => {
         fetch('http://localhost:5000/food')
             .then(res => res.json())
             .then(data => {
-                setFoods(data);
+        const sortedByQuantity = [...data].sort((a, b) => b.quantity - a.quantity);
+     
+        setFoods(sortedByQuantity.slice(0, 6));
+               
          console.log(data)
             })
     }, [])   

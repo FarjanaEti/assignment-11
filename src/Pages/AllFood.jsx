@@ -67,6 +67,7 @@ const AllFood = () => {
               <p>Location: {food.location}</p>
               <p>Quantity: {food.quantity}</p>
               <p>Status: {food.status}</p>
+              <p>Expire Date: {food.expiredDateTime}</p>
               <div className="card-actions justify-between inline-block">
               <Link to={`/food/${food._id}`}> <button
                   className="btn btn-accent" >
