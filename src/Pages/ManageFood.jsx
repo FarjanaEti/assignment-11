@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../AuthProvider/useAxiosSecure';
 
 const ManageFood = () => {
     const [foods, setFoods] = useState([]);
+    console.log(foods)
     const { user } = useAuth();
+    const axiosSecure=useAxiosSecure();
     const [selectedFood, setSelectedFood] = useState(null);
     const [showUpdateModal, setShowUpdateModal] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/food?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => setFoods(data));
+        // fetch(`http://localhost:5000/manage-food?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => 
+        //         setFoods(data));
+        axiosSecure.get(`/manage-food?email=${user.email}`)
+        .then(res=>setFoods(res.data))
     }, [user.email]);
 
      const handleDelete = (id) => {
@@ -35,7 +41,7 @@ const ManageFood = () => {
      }
      const handleUpdate = (updatedFood) => {
           console.log(updatedFood)                    
-         fetch(`http://localhost:5000/food/${updatedFood._id}`, {
+         fetch(`http://localhost:5000/manage-food/${updatedFood._id}`, {
              method: 'PATCH',
              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
