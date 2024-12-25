@@ -40,7 +40,7 @@ const Register = () => {
         .then(res=>{ 
              toast.success('Registration successful') 
              setTimeout(() => {
-              //navigate('/login');
+              navigate('/login');
             }, 2000);               
         })
         .catch(err=>{
