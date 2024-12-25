@@ -51,6 +51,7 @@ const LogIn = () => {
       }, 2000);
     })
     .catch((err) => {
+      console.log(err)
       toast.error(`Google Login failed: ${err.message}`);
     });  
      }                        
