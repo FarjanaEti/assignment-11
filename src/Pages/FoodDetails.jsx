@@ -1,10 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useAuth from '../Hooks/useAuth';
 
 const FoodDetails = () => {
    const food=useLoaderData();
    console.log(food);   
+   const { user } = useAuth();
+   console.log(user);
    const handleRequestFood=()=>{
       document.getElementById("requestModal").showModal();                        
    }    
@@ -43,8 +46,8 @@ const FoodDetails = () => {
       <p><strong>Quantity:</strong> {food.quantity}</p>
       <p><strong>Status:</strong> {food.status}</p>
       <p><strong>Expired Date:</strong> {new Date(food.expiredDateTime).toLocaleString()}</p>
-      <p><strong>Donator Name:</strong> {food.donatorName}</p>
-      <p><strong>Donator Email:</strong> {food.donatorEmail}</p>
+      <p><strong>Donator Name:</strong> {food.donator.name}</p>
+      <p><strong>Donator Email:</strong> {food.donator.email}</p>
       <button className="btn btn-primary mt-6" onClick={handleRequestFood}>
         Request Food
       </button>
@@ -80,7 +83,7 @@ const FoodDetails = () => {
               <label>Donator Email:</label>
               <input
                 type="email"
-                value={food.donatorEmail}
+                value={food.donator.email}
                 className="input input-bordered w-full"
                 readOnly
               />
@@ -98,7 +101,7 @@ const FoodDetails = () => {
               <label>User Email:</label>
               <input
                 type="email"
-                value={food.donator.email}
+              value={user.email}
                 className="input input-bordered w-full"
                 readOnly
               />

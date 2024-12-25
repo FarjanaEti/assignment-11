@@ -10,7 +10,6 @@ const FeaturedFood = () => {
             .then(res => res.json())
             .then(data => {
         const sortedByQuantity = [...data].sort((a, b) => b.quantity - a.quantity);
-     
         setFoods(sortedByQuantity.slice(0, 6));
                
          console.log(data)
@@ -24,7 +23,7 @@ const FeaturedFood = () => {
   return (
     <div className="p-6  bg-gray-100">
       <h2 className="text-3xl font-bold text-center mb-6">Featured Foods</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-24 overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  space-x-5 pt-24 overflow-hidden">
         {foods.map((food) => (
           <div
             key={food._id}

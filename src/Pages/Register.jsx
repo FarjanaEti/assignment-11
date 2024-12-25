@@ -9,17 +9,17 @@ import lottiAnimaton from '../assets/Animation - 1733851369003.json'
 import Lottie from 'lottie-react';
 
 const Register = () => {
-    const {createUser,setUser,handleGoogle}=useContext(AuthContext)                          
+    const {createUser,handleGoogle}=useContext(AuthContext)                          
    const [error,setError]=useState({});
    const navigate=useNavigate();
 
    //password validation
-//  const validatePassword = (password) => {
-//     if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || password.length < 6) {
-//       return 'Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long';
-//     }
-//     return null; 
-//   };
+  const validatePassword = (password) => {
+    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || password.length < 6) {
+      return 'Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long';
+    }
+     return null; 
+   };
     //create a new user
     const handleSubmit= (e)=>{                      
       e.preventDefault();
@@ -29,35 +29,33 @@ const Register = () => {
     const photo = form.get("url");
     const password = form.get("pass");
 
-//     const passwordError = validatePassword(password);
-//    if (passwordError) {
-//        setError({ ...error, password: passwordError });
-//       Swal.fire(passwordError);
-//       return; 
-//     }
+     const passwordError = validatePassword(password);
+    if (passwordError) {
+        setError({ ...error, password: passwordError });
+       Swal.fire(passwordError);
+       return; 
+     }
 
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-       // setUser(user);
-       console.log(user)
-       toast.success('Registration successful')
-       setTimeout(() => {
-       navigate('/');
-     }, 2000);
-           })
-      .catch((err) => {
-       Swal.fire(`Registration failed: ${err.message}`)
-      });                           
+     createUser(email,password)
+        .then(res=>{ 
+             toast.success('Registration successful') 
+             setTimeout(() => {
+              navigate('/login');
+            }, 2000);               
+        })
+        .catch(err=>{
+           console.log(err)    
+           Swal.fire(`Registration failed: ${err.message}`)               
+        })                    
 };
 
     const handleGoogleLogin=()=>{
       handleGoogle()
     .then((res) => {
-      const user = res.user;
-      toast.success(`Welcome, ${user.displayName}!`);
+      // const user = res.user;
+      toast.success(`Welcome!`);
       setTimeout(() => {
-        navigate('/');
+        navigate('/login');
       }, 2000);
     })
     .catch((err) => {

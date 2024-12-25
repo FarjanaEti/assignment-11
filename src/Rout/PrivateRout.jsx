@@ -12,10 +12,12 @@ const PrivateRout = ({children}) => {
         return <span className="loading loading-ring loading-lg"></span>
     }
 
-    if(user){
+    if(user && user?.email){
         return children
     }
-
+    else{
+        {user ? children : <Navigate to="/login" />} 
+       }
     return <Navigate to="/login" state={location?.pathname}></Navigate>
 };
 

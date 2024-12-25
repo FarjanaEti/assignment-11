@@ -12,13 +12,13 @@ import FoodDetails from '../Pages/FoodDetails';
 import MyRequest from '../Pages/MyRequest';
 import ManageFood from '../Pages/ManageFood';
 import PrivateRout from './PrivateRout';
+import Error from '../Component/Error';
 
 const router = createBrowserRouter([
    {
   path: "/",
   element:<Layout></Layout>,
-  
-  errorElement: <h2>Error page</h2>,
+  errorElement:<Error></Error>,
   children:[
      {
      path:'/',

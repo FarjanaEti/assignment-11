@@ -11,7 +11,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="p-5  bg-[#A0522D] rounded-xl shadow-2xl my-5">
+    <div className="p-5 text-white  bg-[#91AC8F] rounded-xl shadow-2xl my-5">
       <section className="text-center  ">
         <h1 className="text-4xl font-semibold  mb-6 ">Supported By</h1>
         <p className="text-lg  ">

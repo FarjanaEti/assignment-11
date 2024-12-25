@@ -10,7 +10,7 @@ const Navbar = () => {
 
           
    return (
-     <div className="navbar bg-base-200 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
+     <div className="navbar bg-stone-800 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -50,8 +50,7 @@ const Navbar = () => {
                 <li><Link to="/register">Register</Link></li>
               </>
             ) : (
-              <li>
-                
+              <li>   
               </li>
             )}
           </ul>
