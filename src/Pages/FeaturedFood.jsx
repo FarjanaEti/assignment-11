@@ -6,7 +6,7 @@ const FeaturedFood = () => {
      const[foods,setFoods]=useState([])   
      const navigate=useNavigate();                  
      useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://assignment-number-11-server.vercel.app/food')
             .then(res => res.json())
             .then(data => {
         const sortedByQuantity = [...data].sort((a, b) => b.quantity - a.quantity);

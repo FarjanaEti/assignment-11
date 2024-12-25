@@ -52,7 +52,7 @@ const AddFood = () => {
     setLoading(true);
 
     // Send request to server
-     fetch('http://localhost:5000/addfood', {
+     fetch('https://assignment-number-11-server.vercel.app/addfood', {
        method: 'POST',
        headers: {
         'content-type': 'application/json',

@@ -31,12 +31,12 @@ const router = createBrowserRouter([
    {
       path:'/allFood',
       element:<AllFood></AllFood>,
-      loader:()=>fetch('http://localhost:5000/food')
+      loader:()=>fetch('https://assignment-number-11-server.vercel.app/food')
    },
    {
       path:'/food/:id',
       element:<PrivateRout><FoodDetails></FoodDetails></PrivateRout> ,
-      loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-number-11-server.vercel.app/food/${params.id}`)
    },
    {
       path:'/myRequest',

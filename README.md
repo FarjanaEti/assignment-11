@@ -3,7 +3,7 @@
 
          ##Purpose of our page is to connect the people who want to share surplus food with those in need.This ensures minimized food waste and contributes to helping communities.
 
-         ##Live Link:
+         ##Live Link:https://food-shearing.web.app/
 
          ##Features:--
          1.Home Page:At the home page you will see a banner that will give you a idea about the purpose.Also at the home page you will see the available foods (only 6 card showed here by clicking see all you will see all the available food)

@@ -8,7 +8,7 @@ const MyRequest = () => {
      const {isPending ,data:request}=useQuery({
         queryKey:['myRequest'],
         queryFn:async ()=>{
-            const res= await fetch(`http://localhost:5000/food-request?email=${user.email}`)
+            const res= await fetch(`https://assignment-number-11-server.vercel.app/food-request?email=${user.email}`)
            return res.json();
         }
      })

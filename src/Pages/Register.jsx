@@ -11,7 +11,7 @@ import Lottie from 'lottie-react';
 const Register = () => {
     const {createUser,handleGoogle}=useContext(AuthContext)                          
    const [error,setError]=useState({});
-   const navigate=useNavigate();
+  // const navigate=useNavigate();
 
    //password validation
   const validatePassword = (password) => {
@@ -40,7 +40,7 @@ const Register = () => {
         .then(res=>{ 
              toast.success('Registration successful') 
              setTimeout(() => {
-              navigate('/login');
+              //navigate('/login');
             }, 2000);               
         })
         .catch(err=>{

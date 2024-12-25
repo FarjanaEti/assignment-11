@@ -12,7 +12,7 @@ const ManageFood = () => {
     const [showUpdateModal, setShowUpdateModal] = useState(false);
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/manage-food?email=${user.email}`)
+        // fetch(`https://assignment-number-11-server.vercel.app/manage-food?email=${user.email}`)
         //     .then(res => res.json())
         //     .then(data => 
         //         setFoods(data));
@@ -22,7 +22,7 @@ const ManageFood = () => {
 
      const handleDelete = (id) => {
          if (window.confirm('Are you sure you want to delete this food?')) {
-            fetch(`http://localhost:5000/food/${id}`, {
+            fetch(`https://assignment-number-11-server.vercel.app/food/${id}`, {
                method: 'DELETE',
             })
                  .then(res => res.json())
@@ -41,7 +41,7 @@ const ManageFood = () => {
      }
      const handleUpdate = (updatedFood) => {
           console.log(updatedFood)                    
-         fetch(`http://localhost:5000/manage-food/${updatedFood._id}`, {
+         fetch(`https://assignment-number-11-server.vercel.app/manage-food/${updatedFood._id}`, {
              method: 'PATCH',
              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({

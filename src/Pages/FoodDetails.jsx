@@ -19,7 +19,7 @@ const FoodDetails = () => {
     additionalNotes: document.querySelector(".textarea").value,
   };
 
-  fetch(`http://localhost:5000/food-request`, {
+  fetch(`https://assignment-number-11-server.vercel.app/food-request`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(requestedData),

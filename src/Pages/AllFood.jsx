@@ -15,7 +15,7 @@ const AllFood = () => {
       console.log(searchQuery)
     if (searchQuery) {
       setLoaderFood([]); 
-      fetch(`http://localhost:5000/food?searchParam=${searchQuery}`)
+      fetch(`https://assignment-number-11-server.vercel.app/food?searchParam=${searchQuery}`)
         .then((res) => res.json())
         .then((data) => {
           setLoaderFood(data); 

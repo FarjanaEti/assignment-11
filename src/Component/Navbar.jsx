@@ -7,10 +7,9 @@ import { easeOut } from 'motion';
 
 const Navbar = () => {
      const { user, signOutUser } = useContext(AuthContext);  
-
-          
+    
    return (
-     <div className="navbar bg-stone-800 py-10 bg-transparent sticky top-0 z-50 shadow-sm">
+     <div className="navbar bg-stone-500 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
