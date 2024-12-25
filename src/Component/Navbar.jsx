@@ -9,7 +9,7 @@ const Navbar = () => {
      const { user, signOutUser } = useContext(AuthContext);  
     
    return (
-     <div className="navbar bg-stone-500 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm">
+     <div className="navbar bg-zinc-900 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -46,7 +46,8 @@ const Navbar = () => {
             {!user ? (
               <>
                 <li><Link to="/login">Login</Link></li>
-                <li><Link to="/register">Register</Link></li>
+                <li><Link to="/register">Signup
+                </Link></li>
               </>
             ) : (
               <li>   
@@ -89,7 +90,8 @@ const Navbar = () => {
         {!user ? (
           <>
             <Link to="/login" className="btn btn-primary">Login</Link>
-            <Link to="/register" className="btn btn-secondary ml-2">Register</Link>
+            <Link to="/register" className="btn bg-[#91AC8F] text-black ml-2">Signup
+            </Link>
           </>
         ) : (
                               

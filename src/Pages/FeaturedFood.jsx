@@ -21,44 +21,40 @@ const FeaturedFood = () => {
   };
 
   return (
-    <div className="p-6  bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-6">Featured Foods</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  space-x-5 pt-24 overflow-hidden">
-        {foods.map((food) => (
-          <div
-            key={food._id}
-            className="card bg-base-100 relative shadow-xl "
-          >
-            <figure >
-              <img
-                src={food.image}
-                alt={food.name}
-                className=" h-48 w-48 absolute z-10  border-2 border-blue-300 rounded-full"
-              />
-            </figure>
-            <div className="card-body text-center mt-20">
-              <h2 className=" text-center">{food.name}</h2>
-              <p>Location: {food.location}</p>
-              <p>Quantity: {food.quantity}</p>
-              <p>Status: {food.status}</p>
-              <p>Expired Date/Time: {new Date(food.expiredDateTime).toLocaleString()}</p>
-              <div className="card-actions justify-between inline-block">
-                
-                <Link to={`/food/${food._id}`}> <button
-                  className="btn btn-accent" >
-                  View Details
-                </button></Link>
-              </div>
-            </div>
+    <div className="p-6 bg-gray-100">
+  <h2 className="text-3xl font-bold text-center mb-6">Featured Foods</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 pt-24">
+    {foods.map((food) => (
+      <div key={food._id} className="card bg-base-100 shadow-xl relative">
+        <figure className="flex justify-center mt-[-50px]">
+          <img
+            src={food.image}
+            alt={food.name}
+            className="h-40 w-40 border-2 border-blue-300 rounded-full"
+          />
+        </figure>
+        <div className="card-body text-center mt-6">
+          <h2 className="text-lg font-bold">{food.name}</h2>
+          <p>Location: {food.location}</p>
+          <p>Quantity: {food.quantity}</p>
+          <p>Status: {food.status}</p>
+          <p>Expired Date/Time: {new Date(food.expiredDateTime).toLocaleString()}</p>
+          <div className="card-actions justify-center">
+            <Link to={`/food/${food._id}`}>
+              <button className="btn btn-accent">View Details</button>
+            </Link>
           </div>
-        ))}
+        </div>
       </div>
-      <div className="text-center mt-6">
-        <button className="btn btn-secondary" onClick={handleShowAll}>
-          Show All
-        </button>
-      </div>
-    </div>
+    ))}
+  </div>
+  <div className="text-center mt-6">
+    <button className="btn text-black bg-[#91AC8F]" onClick={handleShowAll}>
+      Show All
+    </button>
+  </div>
+</div>
+
   );
 };
 

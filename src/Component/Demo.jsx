@@ -2,7 +2,8 @@ import React from 'react';
 
 const Demo = () => {
    return (
-   <div className=' gap-3'>                          
+   <div className=' gap-3'> 
+   <h2 className='text-2xl mb-2 '>Demo Pages</h2>                         
    <div className="card bg-base-100 h-96 w-60  shadow-xl overflow-hidden group">
   {/* Image Container 1*/}
   <figure className="relative w-full h-64 overflow-hidden">
@@ -56,8 +57,10 @@ const Demo = () => {
 </div>
   {/* Image Container 2*/}
    <div className="card bg-base-100 h-96 w-60 shadow-xl overflow-hidden group">
+    <a className='py-6'><u>News about Donate food</u></a>
+    
   <figure className="relative w-full h-64 overflow-hidden">
-    <div className="absolute top-0 left-0 w-full h-[500px] transition-transform duration-[4000ms] group-hover:translate-y-[-1630px]">
+    <div className="absolute top-0 left-0 w-full h-[500px] transition-transform duration-[5000ms] group-hover:translate-y-[-1630px]">
       {/* news 1 */}
       <div className="border card bg-base-100 h-96 w-60 shadow-xl overflow-hidden group">
     <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via- dark:from-gray-50 dark:to-gray-50"></div>

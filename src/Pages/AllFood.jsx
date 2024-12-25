@@ -27,13 +27,13 @@ const AllFood = () => {
      return (
     <div className="p-6 mt-5 bg-gray-100">
       <h2 className="text-2xl font-bold text-center  mb-6">Available Foods</h2>
-      <div className='flex gap-2 w-1/3 mx-auto  '>
+      <div className='flex md:gap-2 md:w-1/3 mx-auto  '>
       {/* from 3 column to 2 column*/}
       <button 
        onClick={() => setThreeColumn(!ThreeColumn)}
       className='btn btn-accent'>Change Layout</button>
        {/* search */}
-       <div className="w-[400px] mx-auto mb-4">
+       <div className=" mx-auto mb-4">
         <form onSubmit={handleSubmit(onSearchSubmit)}>
           <input
             {...register('search')} 
