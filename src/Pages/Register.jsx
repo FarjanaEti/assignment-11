@@ -11,7 +11,7 @@ import Lottie from 'lottie-react';
 const Register = () => {
     const {createUser,handleGoogle}=useContext(AuthContext)                          
    const [error,setError]=useState({});
-  // const navigate=useNavigate();
+   const navigate=useNavigate();
 
    //password validation
   const validatePassword = (password) => {
@@ -59,6 +59,7 @@ const Register = () => {
       }, 2000);
     })
     .catch((err) => {
+      console.log(err)
       toast.error(`Google Login failed: ${err.message}`);
     });               
   }
