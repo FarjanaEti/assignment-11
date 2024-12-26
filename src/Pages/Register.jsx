@@ -52,7 +52,6 @@ const Register = () => {
     const handleGoogleLogin=()=>{
       handleGoogle()
     .then((res) => {
-      // const user = res.user;
       toast.success(`Welcome!`);
       setTimeout(() => {
         navigate('/login');

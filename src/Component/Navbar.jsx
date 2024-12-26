@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../AuthProvider/AuthContex';
 import { GiFoodTruck } from 'react-icons/gi';
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { easeOut } from 'motion';
 
 const Navbar = () => {
-     const { user, signOutUser } = useContext(AuthContext);  
-    
-   return (
-     <div className="navbar bg-zinc-900 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm">
+  const { user, signOutUser } = useContext(AuthContext);
+  console.log(user)
+  return (
+    <div className="navbar bg-zinc-900 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -42,36 +42,36 @@ const Navbar = () => {
                 <li><Link to="/manageFood">Manage Food</Link></li>
               </>
             )}
-            
+
             {!user ? (
               <>
                 <li><Link to="/login">Login</Link></li>
-                <li><Link to="/register">Signup
-                </Link></li>
+                <li><Link to="/register">Signup</Link></li>
               </>
             ) : (
-              <li>   
-              </li>
+              <li></li>
             )}
           </ul>
         </div>
-        <a className="btn hidden  lg:block btn-ghost text-xl  mb-6">
-        <div className='flex space-x-5'>
-          <motion.h1 animate={{ x: 20 }}
-        transition={{ duration: 2, delay: 1, ease: easeOut, repeat: Infinity }}>
-         <GiFoodTruck className='text-blue-700 text-7xl'></GiFoodTruck>
-          </motion.h1>
-        
-         <div > <p>-----The-----</p>
-          <motion.h1 animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }}
-           transition={{ duration: 1.5, repeat: Infinity }}>Food Sharing </motion.h1>
-          <p>---- Project ----</p></div>
-         </div>
+        <a className="btn hidden lg:block btn-ghost text-xl mb-6">
+          <div className='flex space-x-5'>
+            <motion.h1 animate={{ x: 20 }}
+              transition={{ duration: 2, delay: 1, ease: easeOut, repeat: Infinity }}>
+              <GiFoodTruck className='text-blue-700 text-7xl' />
+            </motion.h1>
+
+            <div>
+              <p>-----The-----</p>
+              <motion.h1 animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }}
+                transition={{ duration: 1.5, repeat: Infinity }}>Food Sharing </motion.h1>
+              <p>---- Project ----</p>
+            </div>
+          </div>
         </a>
       </div>
 
-      {/* Navbar Center (Visible only on large screens) */}
-      <div className="navbar-center  hidden lg:flex">
+      {/* Navbar Center  */}
+      <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/allFood">All Food</Link></li>
@@ -90,25 +90,23 @@ const Navbar = () => {
         {!user ? (
           <>
             <Link to="/login" className="btn btn-primary">Login</Link>
-            <Link to="/register" className="btn bg-[#91AC8F] text-black ml-2">Signup
-            </Link>
+            <Link to="/register" className="btn bg-[#91AC8F] text-black ml-2">Signup</Link>
           </>
         ) : (
-                              
           <div className="relative group flex items-center justify-center gap-4">
-            {/* User Photo */}
+            {/* User Profile Image */}
             <img
-              src={user.photoURL || "https://i.ibb.co.com/1TxrJFN/462561728-536882932418932-6619261142512956761-n.jpg"}
+              src={user.photoURL || "https://i.ibb.co/1TxrJFN/462561728-536882932418932-6619261142512956761-n.jpg"}
               alt="User"
-              className="w-12 h-10 rounded-full border "
-            />      
-                <button onClick={signOutUser} className="btn  btn-error ">Logout</button>
-            
+              className="w-12 h-10 rounded-full border"
+            />
+            {/* Logout Button */}
+            <button onClick={signOutUser} className="btn btn-error">Logout</button>
           </div>
         )}
       </div>
     </div>
- );
+  );
 };
 
 export default Navbar;

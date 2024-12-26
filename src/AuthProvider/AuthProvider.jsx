@@ -23,40 +23,53 @@ const AuthProvider = ({children}) => {
  return signInWithEmailAndPassword(auth,email,password)                    
  }
 
- useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-    console.log('STATE CAPTURED', currentUser?.email)
-    if(currentUser?.email){
-      const user={email:currentUser.email}
-     
-      axios.post('https://assignment-number-11-server.vercel.app/jwt',user,{
-         withCredentials:true
-      })
-      .then(res => {
-         console.log('login token', res.data);
-         setLoading(false);
+useEffect(() => {
+   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+     setLoading(true); 
+ 
+     if (currentUser?.email) {
+       const user = { email: currentUser.email };
+ 
+       axios
+         .post('https://assignment-number-11-server.vercel.app/jwt', user, {
+           withCredentials: true,
+         })
+         .then((res) => {
+           console.log('login token', res.data);
+           setLoading(false); 
+         })
+         .catch((error) => {
+           console.error('Error logging in', error);
+           setLoading(false); 
+         });
+     } else {
+       axios
+         .post('https://assignment-number-11-server.vercel.app/logout', {}, {
+           withCredentials: true,
+         })
+         .then(res=>{
+            console.log(res.data)
+            setLoading(false) 
+         })
+         .catch((error) => {
+           console.error('Error logging out', error);
+           setLoading(false); 
+         });
+     }
+   });
+ 
+   return () => {
+     unsubscribe();
+   };
+ }, []);
+ 
+ const signOutUser = () => {
+   signOut(auth)
+     .then(() => {
+       console.log('User signed out');
+       setUser(null);
      })
-   }
-   else{
-      axios.post('https://assignment-number-11-server.vercel.app/logout',{},{
-         withCredentials:true
-      })
-      .then(res=>{
-         console.log(res.data)
-         setLoading(false) 
-      })
-   }
-  });
-
-  return () => {
-    unsubscribe();
-  };
-}, []);
-
- const signOutUser=()=>{
-  return signOut(auth)
-}
+ };
       const info={
      user,
      setUser,                         
