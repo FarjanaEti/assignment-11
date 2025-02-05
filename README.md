@@ -3,8 +3,7 @@
 
          ##Purpose of our page is to connect the people who want to share surplus food with those in need.This ensures minimized food waste and contributes to helping communities.
 
-         ![Screenshot 2025-02-05 122110](https://github.com/user-attachments/assets/083d6227-d2b3-4d07-a6a7-063ac9a4db7d)
-
+       ![Screenshot 2025-02-05 180952](https://github.com/user-attachments/assets/1cbe1b8e-1571-402b-aa1a-c3234b59797b)
 
 
 
