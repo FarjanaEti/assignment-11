@@ -3,7 +3,8 @@
 
          ##Purpose of our page is to connect the people who want to share surplus food with those in need.This ensures minimized food waste and contributes to helping communities.
 
-         ![Screenshot 2025-02-05 180952](https://github.com/user-attachments/assets/a59c17b7-2e7f-4e13-87a2-739610d321f0)
+         ![Screenshot 2025-02-05 180952](https://github.com/user-attachments/assets/86f748c1-9274-452f-a025-260b86d0d218)
+
 
 
          ##Live Link:https://food-shearing.web.app/
