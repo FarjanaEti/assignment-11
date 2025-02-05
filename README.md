@@ -1,12 +1,16 @@
            
-         <------THE FOOD SHARING PAGE------>
+                                         **<------THE FOOD SHARING PAGE------>**
 
          ##Purpose of our page is to connect the people who want to share surplus food with those in need.This ensures minimized food waste and contributes to helping communities.
+
+         ![Screenshot 2025-02-05 180952](https://github.com/user-attachments/assets/a59c17b7-2e7f-4e13-87a2-739610d321f0)
+
 
          ##Live Link:https://food-shearing.web.app/
 
          ##Features:--
-         1.Home Page:At the home page you will see a banner that will give you a idea about the purpose.Also at the home page you will see the available foods (only 6 card showed here by clicking see all you will see all the available food)
+         1.Home Page:At the home page you will see a banner that will give you a idea about the purpose.Also at the home page you will see the available foods (only 6 
+           card showed here by clicking see all you will see all the available food)
 
          2.Authentication:We use JWT for authenticate login and registered user. A user without proper authentication won't be able to use or even see others data
 
@@ -14,7 +18,14 @@
          
          4.Demo Page:you will see a demo page by hovering on it you will see all the food image going vertically
 
-         ##NPM packages:-
+         🛠 Technologies Used
+           - React.js
+           - Tailwind CSS
+           - Node.js
+           - MongoDB
+           - Firebase Authentication
+
+         ##Dependencies:-
            `react-router-dom`
             `tailwindcss`
             `daisyui`
@@ -28,3 +39,8 @@
             `react-icons`
             `axios`
             `motion`
+
+            **How to use:**
+            
+
+            
