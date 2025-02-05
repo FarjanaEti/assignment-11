@@ -3,7 +3,8 @@
 
          ##Purpose of our page is to connect the people who want to share surplus food with those in need.This ensures minimized food waste and contributes to helping communities.
 
-         ![Screenshot 2025-02-05 180952](https://github.com/user-attachments/assets/86f748c1-9274-452f-a025-260b86d0d218)
+         ![Screenshot 2025-02-05 122110](https://github.com/user-attachments/assets/083d6227-d2b3-4d07-a6a7-063ac9a4db7d)
+
 
 
 
@@ -42,6 +43,20 @@
             `motion`
 
             **How to use:**
+
+            Clone the repository:
+
+            https://github.com/programming-hero-web-course2/b10a11-client-side-FarjanaEti.git
+
+            Install dependencies:
+
+            npm install
+
+            Start the server:
+
+            npm run dev
+
+            Live Link:-https://food-shearing.web.app/
             
 
             
