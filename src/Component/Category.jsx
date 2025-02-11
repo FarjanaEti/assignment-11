@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 const Category = () => {
   const [categories, setCategories] = useState([]);
 
-  // Fetch JSON Data
+  
   useEffect(() => {
-    fetch("/categories.json") // Replace with actual API or local file
+    fetch("/categories.json") 
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching categories:", error));
