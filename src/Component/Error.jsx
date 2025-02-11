@@ -4,10 +4,10 @@ import myImage from '../assets/error.PNG';
 
 const Error = () => {
   return (
-  <div className='text-center text-2xl font-semibold text-red-400 mt-20'>
+  <div className='text-center text-2xl font-semibold  mt-20'>
       <h1>404 - Page Not Found</h1>
       <p>The page you are looking for does not exist.</p> 
-    <NavLink to='/'>  <button className='btn btn-error mt-4'>Go to home page</button>  </NavLink>  
+    <NavLink to='/'>  <button className='btn btn-accent mt-4'>Go to home page</button>  </NavLink>  
     <div className='text-center mx-auto w-72'>
 
     <img className='h-64' src={myImage} alt="Description of the image" />                                                                                

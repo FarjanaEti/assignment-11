@@ -65,7 +65,7 @@ const AboutUs = () => {
             Our platform is powered by a supportive community of donors and recipients who believe in helping each other. Together, we can make a difference!
           </p>
           <a
-            href="/join"
+            href="https://bcsbd.org.bd/become-a-member"
             className="btn btn-outline btn-primary text-white p-3 mt-4 rounded-md hover:bg-blue-600 transition duration-300"
           >
             Become a Member

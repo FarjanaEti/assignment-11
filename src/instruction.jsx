@@ -4,8 +4,6 @@
 
 // -The background color of the Navbar must be relevant to the primary/secondary color or any relevant color of the website (Assignment 11)
 
-
-
 // -The navbar background must take up the full width of the screen, regardless of size. 
 
 
