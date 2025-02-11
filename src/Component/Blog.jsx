@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { FaGoogle } from 'react-icons/fa';
 const Blog = () => {
   const logos = [
-      'https://i.ibb.co.com/vPC2v5s/l-4.jpg'   ,                     
-      'https://i.ibb.co.com/tbJTdkH/l-3.jpg'   ,                     
-      'https://i.ibb.co.com/4M1yM8w/l-2.jpg'   ,                     
-      'https://i.ibb.co.com/ZSFs0Rc/l-1.jpg'   ,                                        
+      'https://i.ibb.co.com/pBZWCNtq/l-4.jpg'   ,                     
+      'https://i.ibb.co.com/qQZ3Cc3/l-3.jpg'   ,                     
+      'https://i.ibb.co.com/FkVdjjzY/l-2.jpg'   ,                     
+      'https://i.ibb.co.com/KcvV0ckw/l-1.jpg'   ,                                        
     
   ];
 

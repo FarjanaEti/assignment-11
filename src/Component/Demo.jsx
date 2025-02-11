@@ -10,7 +10,7 @@ const Demo = () => {
     <div className="absolute top-0 left-0 w-full h-[500px] transition-transform duration-[4000ms]  group-hover:translate-y-[-1800px]">
       <img
         className="w-full h-64 object-cover"
-        src="https://i.ibb.co.com/QYQhS83/card-1.jpg"
+        src="https://i.ibb.co.com/gMz64H5M/card-1.jpg"
         alt="Image 1"
       />
       <img
@@ -45,7 +45,7 @@ const Demo = () => {
       />
       <img
         className="w-full h-64 object-cover"
-        src="https://i.ibb.co.com/3d45dpX/food-3.jpg"
+        src="https://i.ibb.co.com/8L8b4qWQ/food-3.jpg"
         alt="Image 4"
       />
     </div>
@@ -94,7 +94,7 @@ const Demo = () => {
     </h2>
     <div className="card-body items-center text-center">
       <h2 className="card-title">Make an Impact</h2>
-      <img src="https://i.ibb.co.com/Ssgr9yq/news-3.jpg" alt="" />
+      <img src="https://i.ibb.co.com/fGDvzM6v/news-3.jpg" alt="" />
     </div>
   </div>
      {/* news 3 */}
@@ -112,7 +112,7 @@ const Demo = () => {
     </h2>
     <div className="card-body items-center text-center">
       <h2 className="card-title">Spread the Word</h2>
-      <img src="https://i.ibb.co.com/Ht85syJ/news-2.jpg" alt="" />
+      <img src="https://i.ibb.co.com/DD0fcMjQ/news-2.jpg" alt="" />
     </div>
   </div>
   {/* news 4 */}
@@ -130,7 +130,7 @@ const Demo = () => {
     </h2>
     <div className="card-body items-center text-center">
       <h2 className="card-title">Donate Generously</h2>
-      <img src="https://i.ibb.co.com/XCFBhPX/news-4.jpg" alt="" />
+      <img src="https://i.ibb.co.com/MDnXb4t1/news-4.jpg" alt="" />
     </div>
   </div>
   {/* news 5 */}
@@ -148,7 +148,7 @@ const Demo = () => {
     </h2>
     <div className="card-body items-center text-center">
       <h2 className="card-title">Be a Part of Change</h2>
-      <img src="https://i.ibb.co.com/9t9T6R3/news-5.jpg" alt="" />
+      <img src="https://i.ibb.co.com/qFDcK4T5/news-5.jpg" alt="" />
     </div>
   </div>
      

@@ -35,6 +35,8 @@ const Navbar = () => {
           >
             <li><Link to="/">Home</Link></li>
             <li><Link to="/allFood">All Foods</Link></li>
+            <li><Link to="/about">ABout Us</Link></li>
+            <li><Link to="/contact">Contact US</Link></li>
             {user && (
               <>
                 <li><Link to="/addFood">Add Movie</Link></li>
@@ -75,6 +77,8 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/allFood">All Food</Link></li>
+          <li><Link to="/about">ABout Us</Link></li>
+          <li><Link to="/contact">Contact US</Link></li>
           {user && (
             <>
               <li><Link to="/addFood">Add Food</Link></li>
@@ -103,7 +107,7 @@ const Navbar = () => {
             {/* Logout Button */}
             <button onClick={signOutUser} className="btn btn-error">Logout</button>
           </div>
-        )}
+        )}  
       </div>
     </div>
   );

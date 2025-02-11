@@ -6,12 +6,14 @@ const MyRequest = () => {
     const{user}=useAuth();
      
      const {isPending ,data:request}=useQuery({
+        
         queryKey:['myRequest'],
         queryFn:async ()=>{
             const res= await fetch(`https://assignment-number-11-server.vercel.app/food-request?email=${user.email}`)
            return res.json();
         }
      })
+     console.log(request)
      if(isPending){
      return <span className="loading loading-dots loading-lg"></span>
      }

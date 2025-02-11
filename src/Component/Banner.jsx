@@ -5,11 +5,11 @@ import Lottie from 'lottie-react';
 
 const Banner = () => {
   const images = [
-    "https://i.ibb.co.com/VxVbBz6/bn-3.jpg",
-    "https://i.ibb.co.com/c6P36Rx/bn-4.jpg",
-    "https://i.ibb.co.com/TWzCxfV/bn-5.jpg",
-    "https://i.ibb.co.com/ys2h2JW/bn-2.jpg",
-    "https://i.ibb.co.com/rmf4f6H/bn-1.webp",
+    "https://i.ibb.co.com/1Y4nqPzX/bn-3.jpg",
+    "https://i.ibb.co.com/BK7TMqXH/bn-4.jpg",
+    "https://i.ibb.co.com/1tNwxcgk/bn-5.jpg",
+    "https://i.ibb.co.com/d47hxwwD/bn-2.jpg",
+    "https://i.ibb.co.com/TBRhN5R3/bn-1.webp",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,7 +63,7 @@ const Banner = () => {
           <p>
             <span className="text-lg md:text-xl font-semibold">
               What are the main goals of our project?
-            </span>
+            </span> <br />
             Food Sharing project was seeking to understand contemporary food sharing and particularly sharing beyond familial settings, so beyond the family. We were particularly interested in its impact on society, the economy, and the environment.
           </p>
           <Lottie className="absolute -right-10 -bottom-3 w-16 h-16 md:-right-14 md:-bottom-5 md:w-24 md:h-24" animationData={lottiAnimaton}></Lottie>

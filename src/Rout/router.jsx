@@ -13,6 +13,7 @@ import MyRequest from '../Pages/MyRequest';
 import ManageFood from '../Pages/ManageFood';
 import PrivateRout from './PrivateRout';
 import Error from '../Component/Error';
+import Contact from '../Component/Contact';
 
 const router = createBrowserRouter([
    {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
    {
     path:'/addFood',
     element:<AddFood></AddFood>,
+   },
+   {
+    path:'/contact',
+    element:<Contact></Contact>
    },
    {
       path:'/allFood',
