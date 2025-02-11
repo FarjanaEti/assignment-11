@@ -1,75 +1,106 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useState, useEffect } from "react";
-import L from "leaflet";
-
-// Custom Marker Icon (fixes default marker issue)
-const customIcon = new L.Icon({
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-});
+import { motion } from "framer-motion";
+import { BiFoodMenu, BiTimeFive, BiMap } from "react-icons/bi";
 
 const Map = () => {
-  const [foodRequests, setFoodRequests] = useState([]);
-  const [foodLocations, setFoodLocations] = useState([]);
+  const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
-  // Fetch food requests from MongoDB
   useEffect(() => {
-    fetch("http://localhost:5000/food-request") // Replace with your API
-      .then((res) => res.json())
-      .then((data) => {
-        setFoodRequests(data);
-        fetchLocations(data); // Convert locations to lat/lng
-      })
-      .catch((err) => console.error("Error fetching food requests:", err));
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeRemaining());
+    }, 1000);
+    return () => clearInterval(timer);
   }, []);
 
-  // Function to get latitude & longitude from location name
-  const fetchLocations = async (foods) => {
-    const updatedLocations = await Promise.all(
-      foods.map(async (food) => {
-        if (!food.location) return null; // Skip if no location
+  function getTimeRemaining() {
+    const targetDate = new Date("2025-03-01T00:00:00"); 
+    const now = new Date();
+    const difference = targetDate - now;
 
-        const response = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(food.location)}`
-        );
-        const data = await response.json();
+    if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
-        if (data.length > 0) {
-          return {
-            ...food,
-            latitude: data[0].lat,
-            longitude: data[0].lon,
-          };
-        }
-        return null;
-      })
-    );
-
-    setFoodLocations(updatedLocations.filter(Boolean)); // Remove null values
-  };
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }
 
   return (
-    <MapContainer center={[23.7509, 90.3935]} zoom={12} style={{ height: "500px", width: "100%" }}>
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    <div className=" my-5 p-6 rounded-md bg-gray-100 text-gray-800">
+      {/* Page Title Animation */}
+      <motion.h1 
+        className="text-4xl font-bold text-center mb-6 flex justify-center items-center gap-2"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+         <span>Upcoming Special Drives & Giveaways </span>
+      </motion.h1>
 
-      {/* Display markers for food requests */}
-      {foodLocations.map((food, index) => (
-        <Marker key={index} position={[food.latitude, food.longitude]} icon={customIcon}>
-          <Popup>
-            <div>
-              <h3>{food.name || "Food Item"}</h3>
-              <img src={food.image} alt="Food" width="100" />
-              <p><strong>Location:</strong> {food.location}</p>
-              <p><strong>Quantity:</strong> {food.quantity}</p>
-              <p><strong>Expires:</strong> {new Date(food.expiredDateTime).toLocaleString()}</p>
-              <p><strong>Notes:</strong> {food.notes}</p>
-            </div>
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+      {/* Countdown Timer Animation */}
+      <motion.div 
+        className="bg-white p-6 rounded-lg shadow-md text-center"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+      >
+        <h2 className="text-xl font-semibold flex justify-center items-center gap-2">
+          <BiTimeFive size={24} className="text-red-600" /> Limited-Time Event Ends In:
+        </h2>
+        <motion.div 
+          className="text-2xl font-bold text-red-600 mt-2"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          {`${timeLeft.days}d ${timeLeft.hours}h ${timeLeft.minutes}m ${timeLeft.seconds}s`}
+        </motion.div>
+      </motion.div>
+
+      {/* Events List */}
+      <div className="mt-8 space-y-6">
+        {/* Event 1 - Slide-Up Animation */}
+        <motion.div 
+          className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(0,0,0,0.2)" }}
+        >
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <BiFoodMenu size={22} className="text-green-600" />
+            Community Ramadan Food Drive
+          </h3>
+          <p className="text-gray-600">
+            Join us in sharing meals this Ramadan! Freshly cooked meals available for those in need.
+          </p>
+          <p className="text-sm text-green-600 font-semibold flex items-center gap-1">
+            <BiMap />  Community Center |  March 1st
+          </p>
+        </motion.div>
+
+        {/* Event 2 - Slide-Up Animation */}
+        <motion.div 
+          className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(0,0,0,0.2)" }}
+        >
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <BiFoodMenu size={22} className="text-green-600" />
+            Weekend Food Giveaway
+          </h3>
+          <p className="text-gray-600">
+            Fresh fruits and vegetables available for pickup. No registration needed!
+          </p>
+          <p className="text-sm text-green-600 font-semibold flex items-center gap-1">
+            <BiMap />  Local Park |  March 3rd
+          </p>
+        </motion.div>
+      </div>
+    </div>
   );
 };
 

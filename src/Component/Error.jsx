@@ -24,10 +24,7 @@ export default Error;
 // Could be interactive, letting users see available food near them.
 // Encourages participation by showing an active community.
 
-// 2. Sales Promotion (Special Campaigns / Featured Donations) 🎉
-// Since it’s a food-sharing platform, replace "sales" with "Special Drives" or "Featured Giveaways."
-// Highlight big donations, festival food drives, or community events where lots of food is available.
-// Add a countdown timer for limited-time events to create excitement.
+
 // 3. Categories (Food Types or Availability) 🍕🥗🥘
 // Organize shared meals into categories like:
 // Home-Cooked Meals

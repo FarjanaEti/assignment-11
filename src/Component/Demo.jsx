@@ -2,11 +2,14 @@ import React from 'react';
 
 const Demo = () => {
    return (
-   <div className=' gap-3'> 
-   <h2 className='text-2xl mb-2 '>Demo Pages</h2>                         
+   <div> 
+   <h2 className='text-2xl text-center  mb-2 '>Demo Pages</h2> 
+   <div  className='mt-10 flex gap-20 justify-center items-center'>
+
    <div className="card bg-base-100 h-96 w-60  shadow-xl overflow-hidden group">
   {/* Image Container 1*/}
-  <figure className="relative w-full h-64 overflow-hidden">
+  <a className='py-6'><u>Pictures of Donated foods</u></a>
+  <figure className="relative border rounded-md w-full h-64 overflow-hidden">
     <div className="absolute top-0 left-0 w-full h-[500px] transition-transform duration-[4000ms]  group-hover:translate-y-[-1800px]">
       <img
         className="w-full h-64 object-cover"
@@ -56,10 +59,10 @@ const Demo = () => {
   </div>
 </div>
   {/* Image Container 2*/}
-   <div className="card bg-base-100 h-96 w-60 shadow-xl overflow-hidden group">
+   <div className="card  bg-base-100 h-96 w-60 shadow-xl overflow-hidden group">
     <a className='py-6'><u>News about Donate food</u></a>
     
-  <figure className="relative w-full h-64 overflow-hidden">
+  <figure className="relative w-full h-64  overflow-hidden">
     <div className="absolute top-0 left-0 w-full h-[500px] transition-transform duration-[5000ms] group-hover:translate-y-[-1630px]">
       {/* news 1 */}
       <div className="border card bg-base-100 h-96 w-60 shadow-xl overflow-hidden group">
@@ -160,9 +163,52 @@ const Demo = () => {
   </div>
 </div>
 
- {/* Image Container 3*/}
- 
+<div className="card bg-base-100 h-96 w-60   shadow-xl overflow-hidden group">
+  {/* Image Container 1*/}
+  <a className='py-6'><u>Pictures of Our top Donner</u></a>
+  <figure className="relative border rounded-md w-full h-64 overflow-hidden">
+    <div className="absolute top-0 left-0 w-full border h-[500px] transition-transform duration-[4000ms]  group-hover:translate-y-[-1350px]">
+      <img
+        className="w-full h-64 object-cover"
+        src="https://i.ibb.co.com/pBZWCNtq/l-4.jpg"
+        alt="Image 1"
+      />
+      <img
+        className="w-full h-64 object-cover"
+        src="https://i.ibb.co.com/qFDcK4T5/news-5.jpg"
+        alt="Image 3"
+      />
+      <img
+        className="w-full h-64 object-cover"
+        src="https://i.ibb.co.com/FkVdjjzY/l-2.jpg"
+        alt="Image 4"
+      />
+      <img
+        className="w-full h-64 object-cover"
+        src="https://i.ibb.co.com/KcvV0ckw/l-1.jpg"
+        alt="Image 4"
+      />
+      <img
+        className="w-full h-64 object-cover"
+        src="https://i.ibb.co.com/MDnXb4t1/news-4.jpg"
+        alt="Image 4"
+      />
+       <img
+        className="w-full h-64 object-cover"
+        src="https://i.ibb.co.com/qQZ3Cc3/l-3.jpg"
+        alt="Image 2"
+      />
+    </div>
+  </figure>
+  {/* Card Body */}
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">Donner</h2>
+  </div>
+</div>
+    </div >                        
+   
 
+ {/* Image Container 3*/}
 
 </div> 
   );
