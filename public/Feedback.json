@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "photo": "https://randomuser.me/api/portraits/women/1.jpg",
+    "quote": "This platform has truly changed my life. I can share and receive food easily, reducing waste and helping others!"
+  },
+  {
+    "id": 2,
+    "name": "Michael Brown",
+    "photo": "https://randomuser.me/api/portraits/men/2.jpg",
+    "quote": "I love how this website connects people in need with surplus food. The community is amazing!"
+  },
+  {
+    "id": 3,
+    "name": "Sophia Martinez",
+    "photo": "https://randomuser.me/api/portraits/women/3.jpg",
+    "quote": "Such a wonderful initiative! I have saved so much food, and it feels great to help others."
+  },
+  {
+    "id": 4,
+    "name": "James Wilson",
+    "photo": "https://randomuser.me/api/portraits/men/4.jpg",
+    "quote": "A simple and effective way to reduce food waste while making a difference in the community."
+  },
+  {
+    "id": 5,
+    "name": "Emily Davis",
+    "photo": "https://randomuser.me/api/portraits/women/5.jpg",
+    "quote": "I’ve met so many kind people through this platform. Food sharing has never been easier!"
+  }
+]

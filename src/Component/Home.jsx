@@ -5,6 +5,7 @@ import Demo from "./Demo";
 import Blog from "./Blog";
 import Map from "./Map";
 import Category from "./Category";
+import Comments from "./Comments";
 
 const Home = () => {
   return (
@@ -44,6 +45,7 @@ const Home = () => {
 
       {/* 🔹 Blog Section */}
       <Blog />
+      <Comments></Comments>
     </div>
   );
 };
