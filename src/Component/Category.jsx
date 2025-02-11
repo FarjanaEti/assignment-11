@@ -13,7 +13,7 @@ const Category = () => {
   }, []);
 
   return (
-    <div className="   h-[500px] border rounded-md bg-slate-100">
+    <div className="   h-[500px] border rounded-md bg-[#91AC8F]">
       <div className="text-center  flex flex-col my-4 px-8 space-y-4">
         {categories.map((category) => (
           <NavLink

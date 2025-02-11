@@ -28,7 +28,7 @@ const Map = () => {
   }
 
   return (
-    <div className=" my-5 p-6 rounded-md bg-gray-100 text-gray-800">
+    <div className=" my-5 p-6 rounded-md bg-[#91AC8F] ">
       {/* Page Title Animation */}
       <motion.h1 
         className="text-4xl font-bold text-center mb-6 flex justify-center items-center gap-2"
@@ -36,12 +36,12 @@ const Map = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-         <span>Upcoming Special Drives & Giveaways </span>
+         <span className="text-white">Upcoming Special Drives & Giveaways </span>
       </motion.h1>
 
       {/* Countdown Timer Animation */}
       <motion.div 
-        className="bg-white p-6 rounded-lg shadow-md text-center"
+        className="bg-base-100 p-6 rounded-lg shadow-md text-center"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
@@ -62,17 +62,17 @@ const Map = () => {
       <div className="mt-8 space-y-6">
         {/* Event 1 - Slide-Up Animation */}
         <motion.div 
-          className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-base-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(0,0,0,0.2)" }}
         >
           <h3 className="text-lg font-semibold flex items-center gap-2">
-            <BiFoodMenu size={22} className="text-green-600" />
+            <BiFoodMenu size={22} className="" />
             Community Ramadan Food Drive
           </h3>
-          <p className="text-gray-600">
+          <p className="">
             Join us in sharing meals this Ramadan! Freshly cooked meals available for those in need.
           </p>
           <p className="text-sm text-green-600 font-semibold flex items-center gap-1">
@@ -82,7 +82,7 @@ const Map = () => {
 
         {/* Event 2 - Slide-Up Animation */}
         <motion.div 
-          className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-base-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -92,7 +92,7 @@ const Map = () => {
             <BiFoodMenu size={22} className="text-green-600" />
             Weekend Food Giveaway
           </h3>
-          <p className="text-gray-600">
+          <p className="">
             Fresh fruits and vegetables available for pickup. No registration needed!
           </p>
           <p className="text-sm text-green-600 font-semibold flex items-center gap-1">

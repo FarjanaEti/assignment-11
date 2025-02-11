@@ -11,16 +11,16 @@ const Blog = () => {
   ];
 
   return (
-    <div className="p-5 text-white  bg-[#91AC8F] rounded-xl shadow-2xl my-5">
-      <section className="text-center  ">
-        <h1 className="text-4xl font-semibold  mb-6 ">Supported By</h1>
+    <div className="p-5  bg-[#91AC8F] rounded-xl shadow-2xl my-5">
+      <section className="text-center  bg-base-100">
+        <h1 className="text-4xl text-white font-semibold  mb-6 ">Supported By</h1>
         <p className="text-lg  ">
           We are grateful for the support and collaboration of organizations and individuals who help make this food-sharing platform a reality.
         </p>
 
         <h2 className="text-3xl font-semibold  mb-3">Our Partners and Sponsors</h2>
 
-        <div className="flex justify-center items-center mb-10 space-x-8  overflow-hidden">
+        <div className="flex  justify-center items-center mb-10 space-x-8  overflow-hidden">
           {logos.map((logo, index) => (
             <motion.div
               key={index}
@@ -38,7 +38,7 @@ const Blog = () => {
             </motion.div>
           ))}
         </div>
-        <h2 className="text-3xl font-semibold  ">Become a Supporter</h2>
+        <h2 className="text-3xl font-semibold ">Become a Supporter</h2>
           <p className="text-lg  mb-6">
             We welcome new partners, sponsors, and volunteers to join us in making a greater impact. If you’re interested in supporting our food-sharing initiative, please contact us.
           </p>

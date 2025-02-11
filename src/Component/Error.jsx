@@ -18,7 +18,7 @@ const Error = () => {
 
 export default Error;
 
-//3. Testimonials & Success Stories
+//
 //2. Real-Time Food Map / Latest Shared Meals 📍🍽
 // Show a live feed or map of recently shared meals in different locations.
 // Could be interactive, letting users see available food near them.

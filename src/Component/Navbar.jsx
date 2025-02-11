@@ -9,7 +9,7 @@ const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   console.log(user)
   return (
-    <div className="navbar bg-zinc-900 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm">
+    <div className="navbar bg-zinc-900 py-10 rounded-3xl bg-transparent sticky top-0 z-50 shadow-sm px-5">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -62,12 +62,18 @@ const Navbar = () => {
               <GiFoodTruck className='text-blue-700 text-7xl' />
             </motion.h1>
 
-            <div>
-              <p>-----The-----</p>
-              <motion.h1 animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }}
-                transition={{ duration: 1.5, repeat: Infinity }}>Food Sharing </motion.h1>
-              <p>---- Project ----</p>
-            </div>
+            <Link to="/" className="block text-center">
+      <div>
+        <p>-----The-----</p>
+        <motion.h1 
+          animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }} 
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
+          Food Sharing
+        </motion.h1>
+        <p>---- Project ----</p>
+      </div>
+    </Link>
           </div>
         </a>
       </div>
@@ -93,7 +99,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {!user ? (
           <>
-            <Link to="/login" className="btn btn-primary">Login</Link>
+            <Link to="/login" className="btn btn-accent">Login</Link>
             <Link to="/register" className="btn bg-[#91AC8F] text-black ml-2">Signup</Link>
           </>
         ) : (
@@ -105,7 +111,7 @@ const Navbar = () => {
               className="w-12 h-10 rounded-full border"
             />
             {/* Logout Button */}
-            <button onClick={signOutUser} className="btn btn-error">Logout</button>
+            <button onClick={signOutUser} className="btn btn-accent">Logout</button>
           </div>
         )}  
       </div>

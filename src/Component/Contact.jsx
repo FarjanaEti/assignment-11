@@ -26,7 +26,7 @@ const Contact = () => {
               <label className="block mb-2">Your Message</label>
               <textarea rows="4" className="w-full p-2 border border-gray-300 rounded-md" placeholder="Type your message here..."></textarea>
             </div>
-            <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-500">Submit</button>
+            <button type="submit" className="btn-accent btn text-white px-6 py-2 rounded-md hover:bg-blue-500">Submit</button>
           </form>
         </div>
       </div>

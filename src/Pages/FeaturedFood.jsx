@@ -21,8 +21,8 @@ const FeaturedFood = () => {
   };
 
   return (
-    <div className="p-6 rounded-md bg-gray-100">
-  <h2 className="text-3xl font-bold text-center mb-6">Featured Foods</h2>
+    <div className="p-6 rounded-md bg-[#91AC8F]">
+  <h2 className="text-3xl font-bold text-white text-center mb-6">Featured Foods</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 pt-24">
     {foods.map((food) => (
       <div key={food._id} className="card bg-base-100 shadow-xl relative">
@@ -49,7 +49,7 @@ const FeaturedFood = () => {
     ))}
   </div>
   <div className="text-center mt-6">
-    <button className="btn text-black bg-[#91AC8F]" onClick={handleShowAll}>
+    <button className="btn text-white btn-accent" onClick={handleShowAll}>
       Show All
     </button>
   </div>
