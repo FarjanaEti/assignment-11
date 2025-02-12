@@ -17,6 +17,7 @@ const FoodDetails = () => {
     status: "requested",
     requestDate: new Date(),
     additionalNotes: document.querySelector(".textarea").value,
+    requesterEmail: user.email,
   };
 
   fetch(`https://assignment-number-11-server.vercel.app/food-request`, {

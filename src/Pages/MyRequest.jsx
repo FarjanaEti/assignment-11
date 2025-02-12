@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const MyRequest = () => {
     const{user}=useAuth();
-     
+     console.log(user)
      const {isPending ,data:request}=useQuery({
         
         queryKey:['myRequest'],

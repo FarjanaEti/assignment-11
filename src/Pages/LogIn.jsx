@@ -56,7 +56,7 @@ const LogIn = () => {
     });  
      }                        
    return (
-   <div className='flex gap-3 items-center justify-center min-h-screen'>
+   <div className='flex border gap-3 items-center justify-center min-h-screen'>
     <div className="text-center lg:text-left w-96">
     <Lottie animationData={lotiieLogin}></Lottie>
     </div>
